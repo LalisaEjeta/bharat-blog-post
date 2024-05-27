@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog post</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z5vIO+km6WT8rbVfRat/m4fp4U0DTLUddFV3XW" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: #68D2E8 !important;">
+        <div>
+            <img src="./img/logo.png" alt="" style="width: 25px;">
+            <a class="navbar-brand text-warning" href="#" style="color: #240750 !important;">Kemoel Tech</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">All articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Create</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="height: 3000px; margin-top: 70px;">
+        <div>
+            <div>
+                <h1 class="fs-1 text-warning text-light p-2 bg-warning text-center border border-0 rounded rounded-3 courgette-regular"
+                    style="background-color: #240750 !important;">Articles from Kemoel Tech</h1>
+                <button class="d-block btn btn-success border border-0 rounded-3 btnoutline" id="create">Create
+                    article</button>
+            </div>
+            <div class="p-3 my-3" id="blogCont">
+
+            </div>
+        </div>
+    </div>
+
+    <dialog class="d-fle flex-column" id="modal">
+        <form action="http://localhost:6060/save" method="post" target="form_target">
+            <label for="title">Title</label> <br>
+            <input type="text" id="titleModal" name="title"> <br>
+            <label for="date">Date</label> <br>
+            <input type="date" id="dateModal" name="date"> <br>
+            <label for="post">Full text</label> <br>
+            <input type="text" id="detailModal" name="details">
+            <div>
+                <button type="submit" class="btn btn-primary m-3" id="save">Create article</button>
+                <!-- <button type="submit" class="btn btn-primary m-3" id="edit">Create post</button> -->
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="d-fle flex-column" id="edittingModal">
+        <form action="http://localhost:6060/update" method="post" target="form_target">
+            <label for="title">Title</label> <br>
+            <input type="text" id="editTitle" name="title"> <br>
+            <label for="date">Date</label> <br>
+            <input type="date" id="editDate" name="date"> <br>
+            <label for="post">Full text</label> <br>
+            <input type="text" id="editDetail" name="details">
+            <div>
+                <button type="submit" class="btn btn-primary m-3" id="saving">Save change</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="d-fle flex-column bg-black" id="shareModal" style="">
+        <form action="http://localhost:6060/update" method="post" target="form_target">
+            <div class="d-flex flex-column ">
+                <!-- LinkedIn Share Button -->
+                <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                <script type="IN/Share" data-url="https://www.yourwebsite.com/your-blog-post" class="m-2"></script>
+
+                <!-- Facebook Share Button -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.yourwebsite.com%2Fyour-blog-post&amp;src=sdkpreparse"
+                    target="_blank" class=" border border-0 rounded bg-primary m-2">
+                    <button>
+                        <i class="fab fa-facebook"></i> Share on Facebook
+                    </button>
+                </a>
+
+            </div>
+        </form>
+    </dialog>
+
+
+    <footer class="footer bg-dark" style="background-color: rgb(49, 49, 49) !important;">
+        <div class="d-flex container text-center justify-content-between">
+            <p class="text-light">All preserved ©2024</p>
+            <p class="text-light">By Lalisa Ejeta Gusare</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (optional, for certain components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
